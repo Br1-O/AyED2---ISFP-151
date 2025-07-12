@@ -1,0 +1,17 @@
+Stage I
+00' - Inicio
+20` - Desarrollo Una *Calculadora en C++ con paradigma Estructurado
+20` - Desarrollo Una *Calculadora en C++ con paradigma Orientado a Objetos
+15` - Análisis de Implementaciones
+
+10` - Break
+
+Stage II
+20` - Desarrollo Una *Calculadora en Python paradigma Estructurado
+20` - Desarrollo Una *Calculadora en Python paradigma Objetos
+
+
+Nota: El Alumno deberá entregar los Cogidos Generados en el Kata en un ZIP (o similar), además de un Word que resuma su experiencia en cada Stage.
+
+*Calculadora: Suma, resta, Multiplique y Divide.
+** El Objetivo del Kata no es Código, sino los aspectos relacionados con los Leguajes, paradigmas, implementaciones y Demas.
