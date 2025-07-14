@@ -1,7 +1,7 @@
 import os
 
 #■■■■■■■■■■ Guía Número ■■■■■■■■■■:
-assignmentNumber = 1
+assignmentNumber = 2.1
 
 #■■■■■■■■■■ Listado de ejercicios ■■■■■■■■■■:
 class Exercises:
@@ -194,7 +194,14 @@ def menu():
     y=True
 
     chars_per_line = 70
-    
+
+    print("\n" +
+        "═"*chars_per_line + 
+        "\n" + 
+        f"Guía número: {assignmentNumber}".center(chars_per_line) + 
+        "\n" + 
+        "═"*chars_per_line)
+
     while y:
 
         option=input("\n" +
