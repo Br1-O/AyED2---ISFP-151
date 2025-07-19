@@ -1,0 +1,34 @@
+Cuando utilizaria paradigmas imperativos y los declarativos, dar ejemplos.
+
+Como el paradigma imperativo se enfoca en cómo realizar una tarea, describiendo paso a paso las instrucciones.
+Yo lo utilizaría cuando necesitara control total sobre el flujo del programa (mediante bucles, condicionales, etc.).
+Así como en tareas que requieran mutabilidad, optimización o gestión precisa de recursos 
+(como es la programación de videojuegos, edición audiovisual, IoT, etc.)
+
+En cambio, como el paradigma imperativo se enfoca en qué se quiere hacer, no en cómo lograrlo.
+Lo usaria cuando la lógica pueda expresarse de manera más concisa (como filtrado, mapeo, consultas, interfaces),
+mediante recursos funcionales que ya posea el mismo lenguaje.
+Ejemplos de esto es el desarrollo web o bases de datos.
+
+------------------------------------------------------------------------------------------------------------------------
+
+¿Por qué debería utilizar Arquitecturas Limpias?, en que mejora?
+
+La arquitectura limpia se basa en separar responsabilidades en capas bien definidas.
+
+Esto mejora la mantenibilidad del código, ya que cambios en la lógica de negocios, por ejemplo, no afectan al dominio, 
+al core de la aplicación. Y reduce así el acoplamiento entre los diferentes componentes, permitiendo una escalabilidad más fácilitada.
+Así mismo, al estar el código más desacoplado entre cada módulo, se puede testear de forma aislada.
+Y brinda una independencia de la tecnologia a usar, pues la base de datos o funcionalidades de frameworks se encuentran en las capas más externas,
+por lo que no afectan a la logica de negocio o el core de entidades e interfaces.
+Y además mejora la legibilidad en general, al ser más fácil encontrar qué está en qué carpeta, y estar clara la funcionalidad de cada módulo.
+
+------------------------------------------------------------------------------------------------------------------------
+
+Describir 3 soluciones donde Implemente Tkinter y SQLite.
+
+Básicamente en toda aplicación que requiera de una GUI y persistencia de datos, esto puede ser:
+Una aplicación que guarde recetas, y el usuario pueda verlas mediante la GUI, así como administrarlas y agregar nuevas recetas a su recetario.
+Una aplicación tipica de tareas, donde el usuario ponga la tarea que va a realizar, cuándo debe realizarla, y el programa se lo recuerde.
+Una aplicación de gestión de stock para un negocio pequeño, donde el usuario puede administrar el stock que le queda, viendo cantidades, 
+actualizandolas o guardando así mismo nuevos pedidos a realizar.
