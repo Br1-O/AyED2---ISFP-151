@@ -97,7 +97,7 @@ Es más lento en ejecución, pero favorece el desarrollo rápido y automatizaci�
         print("8.  Elegir 3 preguntas frecuentes y Desarrollarlas. ")
         print("\n")
         print("""
-P # 1) ¿Es mejor aprender C ++ o Python?
+¿Es mejor aprender C ++ o Python?
 - En realidad depende de a qué se quiera apuntar y con qué objetivos. 
 Si se desea aprender sobre programación de bajo nivel, cómo funcionan la mayoria de sistemas por debajo de las interfaces de usuario/desarrollador,
 o se quiere apuntar a desarrollar uno mismo sistemas de cero, C++ sería la mejor opción.
@@ -105,14 +105,14 @@ Ahora bien, si lo que se quiere es simplemente aprender a desarrollar de forma r
 o se quiere apuntar sólo a un ámbito en particular donde ya haya un gran ecosistema de librerias y frameworks que faciliten aún más dicho desarrollo,
 entonces sería mejor optar por Python (o así mismo Ruby o Js, si hablamos de web)
               
-P # 3) ¿Python puede reemplazar a C ++?
+¿Python puede reemplazar a C ++?
 - C++, así como C, son usados ampliamente en el desarrollo de bajo nivel por permitir el manejo de recursos de forma optima, 
 así como la interacción con partes del hardware que otros lenguajes de más alto nivel no permiten.
 Python está desarrollado sobre C, entonces que lo reemplace es como decir que los transistores reemplazan la electricidad 
 o que los booleanos reemplazan los states digitales fisicos.
 Una interfaz no puede reemplazar a su implementación, por más que sea ella la usada, debajo siempre debe haber algo que no sea la misma interfaz.
 
-P # 4) ¿Qué es mejor C ++, Java o Python?
+¿Qué es mejor C ++, Java o Python?
 - Depende. Todos los lenguajes tienen idoneidad para campos, tareas o prácticas especificas, 
 por algo fueron pensados y desarrollados, y aún siguen en uso.
 C++, así como C, son lenguajes que son pensados para el manejo de hardware y alto rendimiento,
@@ -141,10 +141,15 @@ class Assignment():
         self.exercises = []
 
         # Checking the name of the methods inside Exercise class, so methods that start with "exercise_" are added to the list of exercises
-        for name in dir(self.exercise_instance):
-            attr = getattr(self.exercise_instance, name)
-            if callable(attr) and name.startswith("exercise_"):
-                self.exercises.append(attr)
+        exercise_methods = [
+            (int(name.split("_")[1]), getattr(self.exercise_instance, name))
+            for name in dir(self.exercise_instance)
+            if callable(getattr(self.exercise_instance, name)) and name.startswith("exercise_")
+        ]
+        #sort them
+        exercise_methods.sort(key=lambda x: x[0])
+
+        self.exercises = [method for _, method in exercise_methods]
 
         self.totalExercises:int = len(self.exercises)
 
@@ -194,14 +199,7 @@ def menu():
     y=True
 
     chars_per_line = 70
-
-    print("\n" +
-        "═"*chars_per_line + 
-        "\n" + 
-        f"Guía número: {assignmentNumber}".center(chars_per_line) + 
-        "\n" + 
-        "═"*chars_per_line)
-
+    
     while y:
 
         option=input("\n" +
@@ -221,8 +219,7 @@ def menu():
             exercises[option - 1]()
         else:
             break
-    
-    clear_console()
+
     print(f"""
     ################   Guía Nro {assignmentNumber} finalizada.   ####################
     """)

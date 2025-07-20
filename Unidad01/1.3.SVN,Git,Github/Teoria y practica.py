@@ -181,7 +181,8 @@ El control de versiones y una buena comunicación son claves para que todos los 
         print("\n")
         print("""
 Adjunto el repositorio que cree para una página portfolio personal usando Github Pages, de manera identica a cómo se instruye en la guía:
-    https://br1-o.github.io/ (cabe aclarar que posteriormente hice una re versión más visual y dinámica en: https://bruno-ortuno.vercel.app/)
+    https://br1-o.github.io/ 
+    (cabe aclarar que posteriormente hice una re versión más visual y dinámica en: https://bruno-ortuno.vercel.app/)
 Así mismo adjunto el repositorio que cree para ir guardando el material de la materia:
     https://github.com/Br1-O/AyED2---ISFP-151
               """)
@@ -202,10 +203,15 @@ class Assignment():
         self.exercises = []
 
         # Checking the name of the methods inside Exercise class, so methods that start with "exercise_" are added to the list of exercises
-        for name in dir(self.exercise_instance):
-            attr = getattr(self.exercise_instance, name)
-            if callable(attr) and name.startswith("exercise_"):
-                self.exercises.append(attr)
+        exercise_methods = [
+            (int(name.split("_")[1]), getattr(self.exercise_instance, name))
+            for name in dir(self.exercise_instance)
+            if callable(getattr(self.exercise_instance, name)) and name.startswith("exercise_")
+        ]
+        #sort them
+        exercise_methods.sort(key=lambda x: x[0])
+
+        self.exercises = [method for _, method in exercise_methods]
 
         self.totalExercises:int = len(self.exercises)
 

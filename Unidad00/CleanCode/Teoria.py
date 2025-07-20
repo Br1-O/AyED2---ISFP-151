@@ -177,7 +177,7 @@ Escalabilidad: Permite que el sistema crezca o se adapte más fácilmente a nuev
         """)
 
     def exercise_13(self):
-        print("12. ¿Qué es una Arquitectura Multicapa?")
+        print("13. ¿Qué es una Arquitectura Multicapa?")
         print("\n")
         print("""
 Arquitectura Multicapa es un patrón de diseño que organiza un sistema software en varias capas jerárquicas, donde cada capa cumple una función específica y puede subdividirse en capas internas según la necesidad.
@@ -282,7 +282,7 @@ Así, el núcleo del sistema no depende de nada externo. Solo conoce interfaces.
         """)
 
     def exercise_22(self):
-        print("21. ¿Cómo funcionan estos Componentes?")
+        print("22. ¿Cómo funcionan estos Componentes?")
         print("\n")
         print(""" 
 El flujo básico de funcionamiento es el siguiente:
@@ -392,10 +392,15 @@ class Assignment():
         self.exercises = []
 
         # Checking the name of the methods inside Exercise class, so methods that start with "exercise_" are added to the list of exercises
-        for name in dir(self.exercise_instance):
-            attr = getattr(self.exercise_instance, name)
-            if callable(attr) and name.startswith("exercise_"):
-                self.exercises.append(attr)
+        exercise_methods = [
+            (int(name.split("_")[1]), getattr(self.exercise_instance, name))
+            for name in dir(self.exercise_instance)
+            if callable(getattr(self.exercise_instance, name)) and name.startswith("exercise_")
+        ]
+        #sort them
+        exercise_methods.sort(key=lambda x: x[0])
+
+        self.exercises = [method for _, method in exercise_methods]
 
         self.totalExercises:int = len(self.exercises)
 

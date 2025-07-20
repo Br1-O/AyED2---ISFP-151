@@ -37,10 +37,15 @@ class Assignment():
         self.exercises = []
 
         # Checking the name of the methods inside Exercise class, so methods that start with "exercise_" are added to the list of exercises
-        for name in dir(self.exercise_instance):
-            attr = getattr(self.exercise_instance, name)
-            if callable(attr) and name.startswith("exercise_"):
-                self.exercises.append(attr)
+        exercise_methods = [
+            (int(name.split("_")[1]), getattr(self.exercise_instance, name))
+            for name in dir(self.exercise_instance)
+            if callable(getattr(self.exercise_instance, name)) and name.startswith("exercise_")
+        ]
+        #sort them
+        exercise_methods.sort(key=lambda x: x[0])
+
+        self.exercises = [method for _, method in exercise_methods]
 
         self.totalExercises:int = len(self.exercises)
 

@@ -391,13 +391,15 @@ class Assignment():
         self.exercises = []
 
         # Checking the name of the methods inside Exercise class, so methods that start with "exercise_" are added to the list of exercises
-        methods = [name for name in dir(self.exercise_instance) if name.startswith("exercise_")]
-        methods.sort(key=lambda x: int(x.split("_")[1]))  # Ordenar por el número
+        exercise_methods = [
+            (int(name.split("_")[1]), getattr(self.exercise_instance, name))
+            for name in dir(self.exercise_instance)
+            if callable(getattr(self.exercise_instance, name)) and name.startswith("exercise_")
+        ]
+        #sort them
+        exercise_methods.sort(key=lambda x: x[0])
 
-        for name in methods:
-            attr = getattr(self.exercise_instance, name)
-            self.exercises.append(attr)
-
+        self.exercises = [method for _, method in exercise_methods]
 
         self.totalExercises:int = len(self.exercises)
 
@@ -467,8 +469,7 @@ def menu():
             exercises[option - 1]()
         else:
             break
-    
-    clear_console()
+
     print(f"""
     ################   Guía Nro {assignmentNumber} finalizada.   ####################
     """)

@@ -50,15 +50,15 @@ de un proyecto nuevo a otro existente.
 Se gestiona, normalmente, usando el módulo venv, que viene con Python 3.3 en adelante por defecto.
 Por ej:
     - Crearemos el entorno virtual mediante el comando:
-        C:\>python -m venv c:\ruta\al\entorno\virtual
+        C:/>python -m venv c:/ruta/al/entorno/virtual
     - Activaremos el entorno virtual mediante el comando:
-        C:\>c:\ruta\al\entorno\virtual\scripts\activate.bat
+        C:/>c:/ruta/al/entorno/virtual/scripts/activate.bat
     Sea cual sea nuestro sistema operativo sabremos que el entorno virtual se ha activado porque su nombre aparece entre paréntesis delante del promt.
     
     - Desactivaremos el entorno virtual mediante el comando:
         $ deactivate
     - Eliminaremos el entorno virtual mediante el comando:
-        C:\>rmdir c:\ruta\al\entorno\virtual /s
+        C:/>rmdir c:/ruta/al/entorno/virtual /s
               
     (Todo esto dado por sentado que se trabaja en Windows, en este ejemplo.)
               """)
@@ -137,10 +137,15 @@ class Assignment():
         self.exercises = []
 
         # Checking the name of the methods inside Exercise class, so methods that start with "exercise_" are added to the list of exercises
-        for name in dir(self.exercise_instance):
-            attr = getattr(self.exercise_instance, name)
-            if callable(attr) and name.startswith("exercise_"):
-                self.exercises.append(attr)
+        exercise_methods = [
+            (int(name.split("_")[1]), getattr(self.exercise_instance, name))
+            for name in dir(self.exercise_instance)
+            if callable(getattr(self.exercise_instance, name)) and name.startswith("exercise_")
+        ]
+        #sort them
+        exercise_methods.sort(key=lambda x: x[0])
+
+        self.exercises = [method for _, method in exercise_methods]
 
         self.totalExercises:int = len(self.exercises)
 
@@ -210,8 +215,7 @@ def menu():
             exercises[option - 1]()
         else:
             break
-    
-    clear_console()
+
     print(f"""
     ################   Guía Nro {assignmentNumber} finalizada.   ####################
     """)
