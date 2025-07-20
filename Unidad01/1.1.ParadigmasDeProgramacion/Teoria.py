@@ -180,7 +180,7 @@ establecer interacciones basadas en el intercambio de mensajes de manera
 asíncrona.
               """)
 
-    def exercise_3(self):
+    def exercise_15(self):
         print("15. Dar ejemplos de uso de Programación Reactiva.")
         print(" \n \n ")
         print("""
