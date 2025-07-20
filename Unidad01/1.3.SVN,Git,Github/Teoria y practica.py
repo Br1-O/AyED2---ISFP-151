@@ -175,6 +175,16 @@ Esto permite revisar y discutir código antes de integrarlo al proyecto principa
 Se hace uso de plataformas como GitHub para coordinar, registrar el progreso, y automatizar pruebas o despliegues. 
 El control de versiones y una buena comunicación son claves para que todos los miembros puedan colaborar de forma eficiente.
               """)
+        
+    def exercise_17(self):
+        print("Crear un nuevo repo jloemig.github.io (Reemplazar x tu nombre) (y todos los puntos consecuentes al manejo de un repositorio)")
+        print("\n")
+        print("""
+Adjunto el repositorio que cree para una página portfolio personal usando Github Pages, de manera identica a cómo se instruye en la guía:
+    https://br1-o.github.io/ (cabe aclarar que posteriormente hice una re versión más visual y dinámica en: https://bruno-ortuno.vercel.app/)
+Así mismo adjunto el repositorio que cree para ir guardando el material de la materia:
+    https://github.com/Br1-O/AyED2---ISFP-151
+              """)
 
 #■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 #■■■■■■■■■■ De acá para abajo sólo es la definición de clases y funciones para el manejo del menú ■■■■■■■■■■
