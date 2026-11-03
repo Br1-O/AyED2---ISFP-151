@@ -586,7 +586,7 @@ Por último limita la ejecución de funciones al archivo main del programa de te
     1 / 0
 """)
 
-    def exercise_31(self):
+    def exercise_38(self):
         print("10.7  Que permite Usando setUp y tearDown en UnitTest? ")
         print("\n")
         print("""
@@ -596,7 +596,7 @@ Mientras que tearDown permite definir una función que se ejecutará siempre al 
 permitiendonos limpiar en ella todas las condiciones que creamos al inicio para manejar nuestro entorno, mediante setUp.
 """)
         
-    def exercise_31(self):
+    def exercise_39(self):
         print("""
 10.1 Explicar el Siguiente Código: 
     import unittest 

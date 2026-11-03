@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDomainLayer.a CMakeFiles/DomainLayer.dir/domain/entities/Article.cpp.o CMakeFiles/DomainLayer.dir/domain/entities/Supplier.cpp.o CMakeFiles/DomainLayer.dir/domain/entities/OrderDetail.cpp.o CMakeFiles/DomainLayer.dir/domain/entities/Order.cpp.o
+/usr/bin/ranlib libDomainLayer.a

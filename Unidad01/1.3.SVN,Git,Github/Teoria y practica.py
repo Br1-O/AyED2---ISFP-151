@@ -183,8 +183,6 @@ El control de versiones y una buena comunicación son claves para que todos los 
 Adjunto el repositorio que cree para una página portfolio personal usando Github Pages, de manera identica a cómo se instruye en la guía:
     https://br1-o.github.io/ 
     (cabe aclarar que posteriormente hice una re versión más visual y dinámica en: https://bruno-ortuno.vercel.app/)
-Así mismo adjunto el repositorio que cree para ir guardando el material de la materia:
-    https://github.com/Br1-O/AyED2---ISFP-151
               """)
 
 #■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■

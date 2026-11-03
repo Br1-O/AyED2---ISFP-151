@@ -1,0 +1,8 @@
+/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/build/CMakeFiles/edit_cache.dir
+/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/build/CMakeFiles/rebuild_cache.dir
+/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/build/src/CMakeFiles/DomainLayer.dir
+/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/build/src/CMakeFiles/ApplicationLayer.dir
+/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/build/src/CMakeFiles/InfrastructureLayer.dir
+/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/build/src/CMakeFiles/App.dir
+/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/build/src/CMakeFiles/edit_cache.dir
+/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/build/src/CMakeFiles/rebuild_cache.dir

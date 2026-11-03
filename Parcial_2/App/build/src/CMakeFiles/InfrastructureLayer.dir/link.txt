@@ -1,0 +1,2 @@
+/usr/bin/ar qc libInfrastructureLayer.a CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/in/ConsoleMenu.cpp.o CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/out/InMemorySupplierRepository.cpp.o CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/out/InMemoryArticleRepository.cpp.o CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/out/InMemoryOrderRepository.cpp.o
+/usr/bin/ranlib libInfrastructureLayer.a
