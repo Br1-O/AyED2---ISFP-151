@@ -1,0 +1,74 @@
+[
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/DomainLayer.dir/domain/entities/Article.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/domain/entities/Article.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/domain/entities/Article.cpp",
+  "output": "src/CMakeFiles/DomainLayer.dir/domain/entities/Article.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/DomainLayer.dir/domain/entities/Supplier.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/domain/entities/Supplier.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/domain/entities/Supplier.cpp",
+  "output": "src/CMakeFiles/DomainLayer.dir/domain/entities/Supplier.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/DomainLayer.dir/domain/entities/OrderDetail.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/domain/entities/OrderDetail.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/domain/entities/OrderDetail.cpp",
+  "output": "src/CMakeFiles/DomainLayer.dir/domain/entities/OrderDetail.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/DomainLayer.dir/domain/entities/Order.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/domain/entities/Order.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/domain/entities/Order.cpp",
+  "output": "src/CMakeFiles/DomainLayer.dir/domain/entities/Order.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/ApplicationLayer.dir/application/services/SupplierService.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/application/services/SupplierService.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/application/services/SupplierService.cpp",
+  "output": "src/CMakeFiles/ApplicationLayer.dir/application/services/SupplierService.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/ApplicationLayer.dir/application/services/ArticleService.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/application/services/ArticleService.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/application/services/ArticleService.cpp",
+  "output": "src/CMakeFiles/ApplicationLayer.dir/application/services/ArticleService.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/ApplicationLayer.dir/application/services/OrderService.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/application/services/OrderService.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/application/services/OrderService.cpp",
+  "output": "src/CMakeFiles/ApplicationLayer.dir/application/services/OrderService.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/in/ConsoleMenu.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/infrastructure/adapters/in/ConsoleMenu.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/infrastructure/adapters/in/ConsoleMenu.cpp",
+  "output": "src/CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/in/ConsoleMenu.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/out/InMemorySupplierRepository.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/infrastructure/adapters/out/InMemorySupplierRepository.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/infrastructure/adapters/out/InMemorySupplierRepository.cpp",
+  "output": "src/CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/out/InMemorySupplierRepository.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/out/InMemoryArticleRepository.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/infrastructure/adapters/out/InMemoryArticleRepository.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/infrastructure/adapters/out/InMemoryArticleRepository.cpp",
+  "output": "src/CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/out/InMemoryArticleRepository.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/out/InMemoryOrderRepository.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/infrastructure/adapters/out/InMemoryOrderRepository.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/infrastructure/adapters/out/InMemoryOrderRepository.cpp",
+  "output": "src/CMakeFiles/InfrastructureLayer.dir/infrastructure/adapters/out/InMemoryOrderRepository.cpp.o"
+},
+{
+  "directory": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build/src",
+  "command": "/usr/bin/g++  -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/include -I/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/../include -g -std=gnu++17 -o CMakeFiles/App.dir/main.cpp.o -c /mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/main.cpp",
+  "file": "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App/src/main.cpp",
+  "output": "src/CMakeFiles/App.dir/main.cpp.o"
+}
+]

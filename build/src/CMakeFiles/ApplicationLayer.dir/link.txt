@@ -1,0 +1,2 @@
+/usr/bin/ar qc libApplicationLayer.a CMakeFiles/ApplicationLayer.dir/application/services/SupplierService.cpp.o CMakeFiles/ApplicationLayer.dir/application/services/ArticleService.cpp.o CMakeFiles/ApplicationLayer.dir/application/services/OrderService.cpp.o
+/usr/bin/ranlib libApplicationLayer.a

@@ -1,0 +1,103 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.14"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "RubberCompanyApp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "App::@145eef247bfb46b6828c",
+					"jsonFile" : "target-App-Debug-39973e9d201903e64f3b.json",
+					"name" : "App",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ApplicationLayer::@145eef247bfb46b6828c",
+					"jsonFile" : "target-ApplicationLayer-Debug-09a1e220a3f04e1c0ad5.json",
+					"name" : "ApplicationLayer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "DomainLayer::@145eef247bfb46b6828c",
+					"jsonFile" : "target-DomainLayer-Debug-a27de08d1d26cf3abd39.json",
+					"name" : "DomainLayer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "InfrastructureLayer::@145eef247bfb46b6828c",
+					"jsonFile" : "target-InfrastructureLayer-Debug-9ea46ebf0f93db80167a.json",
+					"name" : "InfrastructureLayer",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/build",
+		"source" : "/mnt/Datos/ISFT151/2do/AyEDII/AyED2---ISFP-151/Parcial_2/App"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
