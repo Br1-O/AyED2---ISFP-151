@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="opencode" version="24.7.17">
+  <diagram id="drone-ibag151-hexagonal-architecture" name="Hexagonal Architecture">
+    <mxGraphModel dx="2000" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="&lt;b&gt;Drone IBag151 · Arquitectura hexagonal&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=22;fontColor=#263238;" vertex="1" parent="1">
+          <mxGeometry x="600" y="20" width="800" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Puertos y adaptadores · la infraestructura depende de la aplicación y el dominio" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#546E7A;" vertex="1" parent="1">
+          <mxGeometry x="520" y="70" width="960" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="application-hexagon" value="&lt;b&gt;APLICACIÓN&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;DroneControlService&lt;br&gt;IDroneControlUseCase (puerto de entrada)&lt;br&gt;IDroneApi (puerto de salida)&lt;/font&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;size=48;align=center;verticalAlign=middle;fontStyle=1;fillColor=#E3F2FD;strokeColor=#1E88E5;fontColor=#0D47A1;fontSize=16;verticalAlign=top;spacingTop=18;" vertex="1" parent="1">
+          <mxGeometry x="470" y="190" width="1060" height="760" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-hexagon" value="&lt;b&gt;DOMINIO&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px&quot;&gt;Drone (entidad)&lt;br&gt;FlightStatus&lt;br&gt;DroneTelemetry&lt;br&gt;DroneAction&lt;/font&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;size=48;align=center;verticalAlign=middle;fontStyle=1;fillColor=#E8F5E9;strokeColor=#43A047;fontColor=#1B5E20;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="760" y="420" width="480" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="use-case-service" value="&lt;b&gt;DroneControlService&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;orquesta el caso de uso&lt;br&gt;valida el dominio y publica la acción&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontStyle=1;arcSize=12;fillColor=#BBDEFB;strokeColor=#1E88E5;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="820" y="260" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="inbound-port" value="&lt;b&gt;IDroneControlUseCase&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;puerto de entrada&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontStyle=1;arcSize=12;fillColor=#C5CAE9;strokeColor=#3949AB;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="390" y="540" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="outbound-port" value="&lt;b&gt;IDroneApi&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;puerto de salida&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontStyle=1;arcSize=12;fillColor=#FFE0B2;strokeColor=#EF6C00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="540" width="190" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="driving-adapter" value="&lt;b&gt;ConsoleDroneController&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;adaptador de entrada&lt;br&gt;lee comandos de la consola&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontStyle=1;arcSize=12;fillColor=#D1C4E9;strokeColor=#5E35B1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="90" y="520" width="260" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="driven-adapter" value="&lt;b&gt;ConsoleDroneApiAdapter&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;adaptador de salida&lt;br&gt;imprime el comando para la API&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontStyle=1;arcSize=12;fillColor=#FFCCBC;strokeColor=#D84315;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="520" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="composition-root" value="&lt;b&gt;AppConfig / main&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;composition root: crea y conecta los objetos&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontStyle=1;arcSize=12;fillColor=#ECEFF1;strokeColor=#546E7A;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="790" y="1010" width="420" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="e-driving-in" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="driving-adapter" target="inbound-port">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-in-service" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.6;" edge="1" parent="1" source="inbound-port" target="use-case-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-service-domain" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="use-case-service" target="domain-hexagon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-service-out" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=2;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="use-case-service" target="outbound-port">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-out-driven" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#37474F;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="outbound-port" target="driven-adapter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-root-driving" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#78909C;strokeWidth=1.5;exitX=0;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="composition-root" target="driving-adapter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-root-driven" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#78909C;strokeWidth=1.5;exitX=1;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="composition-root" target="driven-adapter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-root-service" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#78909C;strokeWidth=1.5;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="composition-root" target="use-case-service">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-root-domain" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#78909C;strokeWidth=1.5;exitX=0.5;exitY=0;entryX=0.4;entryY=1;" edge="1" parent="1" source="composition-root" target="domain-hexagon">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" value="&lt;b&gt;Regla de dependencia:&lt;/b&gt; Infraestructura → Aplicación → Dominio.&lt;br&gt;Los adaptadores implementan los puertos; el dominio no conoce la consola ni la API." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontColor=#37474F;align=left;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="90" y="880" width="700" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

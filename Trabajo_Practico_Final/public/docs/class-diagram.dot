@@ -1,0 +1,281 @@
+digraph DroneIBag151ClassDiagram {
+    graph [
+        rankdir=TB,
+        fontname="Helvetica",
+        fontsize=12,
+        nodesep=0.45,
+        ranksep=0.75,
+        splines=true,
+        pad=0.35,
+        bgcolor="#ffffff",
+        compound=true,
+        newrank=true
+    ];
+    node [
+        shape=plain,
+        fontname="Helvetica",
+        fontsize=10
+    ];
+    edge [
+        color="#455a64",
+        fontname="Helvetica",
+        fontsize=9,
+        arrowsize=0.8
+    ];
+
+    subgraph cluster_input {
+        label="Infrastructure · Input adapter";
+        fontcolor="#4a148c";
+        style="rounded,filled";
+        color="#d1c4e9";
+        fillcolor="#f3e5f5";
+
+        ConsoleDroneController [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#b39ddb"><B>ConsoleDroneController</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    - useCase_ : shared_ptr&lt;IDroneControlUseCase&gt;<BR/>
+                    - input_ : istream&amp;<BR/>
+                    - output_ : ostream&amp;
+                </TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    + ConsoleDroneController(useCase, input, output)<BR/>
+                    + run() : void<BR/>
+                    - normalize(text) : string<BR/>
+                    - trim(text) : string<BR/>
+                    - parseCommand(text) : ConsoleAction<BR/>
+                    - execute(action) : void<BR/>
+                    - printHelp() : void<BR/>
+                    - printStatus() : void
+                </TD></TR>
+            </TABLE>
+        >];
+
+        AppConfig [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#b39ddb"><B>AppConfig</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    + createConsoleController(in, out) : unique_ptr&lt;ConsoleDroneController&gt;<BR/>
+                    + run(in, out) : int
+                </TD></TR>
+            </TABLE>
+        >];
+    }
+
+    subgraph cluster_application {
+        label="Application";
+        fontcolor="#0d47a1";
+        style="rounded,filled";
+        color="#bbdefb";
+        fillcolor="#e3f2fd";
+
+        IDroneControlUseCase [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#90caf9"><B>&laquo;interface&raquo;<BR/>IDroneControlUseCase</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    + id() : string<BR/>
+                    + takeOff() : void<BR/>
+                    + land() : void<BR/>
+                    + elevate() : void<BR/>
+                    + descend() : void<BR/>
+                    + turnRight() : void<BR/>
+                    + turnLeft() : void<BR/>
+                    + unloadPackage() : void<BR/>
+                    + takeReceptionPhoto() : void<BR/>
+                    + notifyDelivery() : void<BR/>
+                    + accelerate() : void<BR/>
+                    + brake() : void<BR/>
+                    + telemetry() : DroneTelemetry
+                </TD></TR>
+            </TABLE>
+        >];
+
+        DroneControlService [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#90caf9"><B>DroneControlService</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    - drone_ : shared_ptr&lt;IDrone&gt;<BR/>
+                    - droneApi_ : shared_ptr&lt;IDroneApi&gt;
+                </TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    + DroneControlService(drone, droneApi)<BR/>
+                    + id() : string<BR/>
+                    + takeOff() : void<BR/>
+                    + land() : void<BR/>
+                    + elevate() : void<BR/>
+                    + descend() : void<BR/>
+                    + turnRight() : void<BR/>
+                    + turnLeft() : void<BR/>
+                    + unloadPackage() : void<BR/>
+                    + takeReceptionPhoto() : void<BR/>
+                    + notifyDelivery() : void<BR/>
+                    + accelerate() : void<BR/>
+                    + brake() : void<BR/>
+                    + telemetry() : DroneTelemetry
+                </TD></TR>
+            </TABLE>
+        >];
+
+        IDroneApi [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#90caf9"><B>&laquo;interface&raquo;<BR/>IDroneApi</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    + execute(action : DroneAction) : void
+                </TD></TR>
+            </TABLE>
+        >];
+    }
+
+    subgraph cluster_domain {
+        label="Domain";
+        fontcolor="#1b5e20";
+        style="rounded,filled";
+        color="#c8e6c9";
+        fillcolor="#e8f5e9";
+
+        IDrone [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#a5d6a7"><B>&laquo;interface&raquo;<BR/>IDrone</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    + id() : string<BR/>
+                    + takeOff() : void<BR/>
+                    + land() : void<BR/>
+                    + elevate() : void<BR/>
+                    + descend() : void<BR/>
+                    + turnRight() : void<BR/>
+                    + turnLeft() : void<BR/>
+                    + unloadPackage() : void<BR/>
+                    + takeReceptionPhoto() : void<BR/>
+                    + notifyDelivery() : void<BR/>
+                    + accelerate() : void<BR/>
+                    + brake() : void<BR/>
+                    + telemetry() : DroneTelemetry
+                </TD></TR>
+            </TABLE>
+        >];
+
+        Drone [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#a5d6a7"><B>Drone</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    - id_ : string<BR/>
+                    - status_ : FlightStatus<BR/>
+                    - altitudeMeters_ : int<BR/>
+                    - speedKph_ : int<BR/>
+                    - headingDegrees_ : int<BR/>
+                    - packageLoaded_ : bool<BR/>
+                    - receptionPhotoTaken_ : bool<BR/>
+                    - deliveryNotified_ : bool<BR/>
+                    + MaxAltitudeMeters : int = 120<BR/>
+                    + ElevationStepMeters : int = 10<BR/>
+                    + MaxSpeedKph : int = 100<BR/>
+                    + SpeedStepKph : int = 10<BR/>
+                    + TurnStepDegrees : int = 90<BR/>
+                    + TakeOffAltitudeMeters : int = 10
+                </TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    + Drone(id, packageLoaded)<BR/>
+                    + id() : string<BR/>
+                    + takeOff() : void<BR/>
+                    + land() : void<BR/>
+                    + elevate() : void<BR/>
+                    + descend() : void<BR/>
+                    + turnRight() : void<BR/>
+                    + turnLeft() : void<BR/>
+                    + unloadPackage() : void<BR/>
+                    + takeReceptionPhoto() : void<BR/>
+                    + notifyDelivery() : void<BR/>
+                    + accelerate() : void<BR/>
+                    + brake() : void<BR/>
+                    + telemetry() : DroneTelemetry<BR/>
+                    - requireFlying(action) : void
+                </TD></TR>
+            </TABLE>
+        >];
+
+        DroneTelemetry [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#fff59d"><B>&laquo;value object&raquo;<BR/>DroneTelemetry</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    + status : FlightStatus<BR/>
+                    + altitudeMeters : int<BR/>
+                    + speedKph : int<BR/>
+                    + headingDegrees : int<BR/>
+                    + packageLoaded : bool<BR/>
+                    + receptionPhotoTaken : bool<BR/>
+                    + deliveryNotified : bool<BR/>
+                    + operator==(other) : bool
+                </TD></TR>
+            </TABLE>
+        >];
+
+        FlightStatus [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#fff59d"><B>&laquo;enumeration&raquo;<BR/>FlightStatus</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    OnGround<BR/>
+                    Flying
+                </TD></TR>
+            </TABLE>
+        >];
+
+        DroneAction [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#fff59d"><B>&laquo;enumeration&raquo;<BR/>DroneAction</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    TakeOff<BR/>
+                    Land<BR/>
+                    Elevate<BR/>
+                    Descend<BR/>
+                    TurnRight<BR/>
+                    TurnLeft<BR/>
+                    UnloadPackage<BR/>
+                    TakeReceptionPhoto<BR/>
+                    NotifyDelivery<BR/>
+                    Accelerate<BR/>
+                    Brake
+                </TD></TR>
+            </TABLE>
+        >];
+    }
+
+    subgraph cluster_output {
+        label="Infrastructure · Output adapter";
+        fontcolor="#4e342e";
+        style="rounded,filled";
+        color="#ffccbc";
+        fillcolor="#fbe9e7";
+
+        ConsoleDroneApiAdapter [label=<
+            <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="5">
+                <TR><TD BGCOLOR="#ffab91"><B>ConsoleDroneApiAdapter</B></TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    - output_ : ostream&amp;
+                </TD></TR>
+                <TR><TD ALIGN="LEFT">
+                    + ConsoleDroneApiAdapter(output)<BR/>
+                    + execute(action : DroneAction) : void<BR/>
+                    - commandText(action) : string_view
+                </TD></TR>
+            </TABLE>
+        >];
+    }
+
+    ConsoleDroneController -> IDroneControlUseCase [style=dashed, arrowhead=open];
+    DroneControlService -> IDroneControlUseCase [style=dashed, arrowhead=empty];
+    Drone -> IDrone [style=dashed, arrowhead=empty];
+    ConsoleDroneApiAdapter -> IDroneApi [style=dashed, arrowhead=empty];
+    DroneControlService -> IDrone [arrowhead=open];
+    DroneControlService -> IDroneApi [arrowhead=open];
+    IDrone -> DroneTelemetry [style=dashed, arrowhead=open];
+    Drone -> DroneTelemetry [style=dashed, arrowhead=open];
+    Drone -> FlightStatus [style=dashed, arrowhead=open];
+    DroneControlService -> DroneAction [style=dashed, arrowhead=open];
+    ConsoleDroneApiAdapter -> DroneAction [style=dashed, arrowhead=open];
+    ConsoleDroneController -> DroneTelemetry [style=dashed, arrowhead=open];
+    AppConfig -> ConsoleDroneController [style=dashed, arrowhead=open];
+    AppConfig -> DroneControlService [style=dashed, arrowhead=open];
+    AppConfig -> Drone [style=dashed, arrowhead=open];
+    AppConfig -> ConsoleDroneApiAdapter [style=dashed, arrowhead=open];
+
+}

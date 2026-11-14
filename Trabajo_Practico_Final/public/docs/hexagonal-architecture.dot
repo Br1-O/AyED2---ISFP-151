@@ -1,0 +1,104 @@
+digraph DroneIBag151HexagonalArchitecture {
+    graph [
+        rankdir=LR,
+        fontname="Helvetica",
+        fontsize=12,
+        nodesep=0.55,
+        ranksep=0.85,
+        pad=0.45,
+        bgcolor="#ffffff",
+        splines=true
+    ];
+    node [
+        shape=box,
+        style="rounded,filled",
+        fontname="Helvetica",
+        fontsize=11,
+        penwidth=1.5
+    ];
+    edge [
+        color="#37474f",
+        fontname="Helvetica",
+        fontsize=9,
+        arrowsize=0.8,
+        penwidth=1.5
+    ];
+
+    ConsoleDroneController [
+        label=<<B>ConsoleDroneController</B><BR/><FONT POINT-SIZE="9">adaptador de entrada<BR/>lee comandos de consola</FONT>>,
+        fillcolor="#d1c4e9",
+        color="#5e35b1"
+    ];
+
+    IDroneControlUseCase [
+        shape=hexagon,
+        label=<<B>IDroneControlUseCase</B><BR/><FONT POINT-SIZE="9">puerto de entrada</FONT>>,
+        fillcolor="#e3f2fd",
+        color="#1e88e5"
+    ];
+
+    DroneControlService [
+        shape=hexagon,
+        label=<<B>DroneControlService</B><BR/><FONT POINT-SIZE="9">caso de uso<BR/>orquesta dominio + API</FONT>>,
+        fillcolor="#bbdefb",
+        color="#1e88e5"
+    ];
+
+    IDroneApi [
+        shape=hexagon,
+        label=<<B>IDroneApi</B><BR/><FONT POINT-SIZE="9">puerto de salida</FONT>>,
+        fillcolor="#fff3e0",
+        color="#ef6c00"
+    ];
+
+    ConsoleDroneApiAdapter [
+        label=<<B>ConsoleDroneApiAdapter</B><BR/><FONT POINT-SIZE="9">adaptador de salida<BR/>traduce acciones a texto de API</FONT>>,
+        fillcolor="#ffccbc",
+        color="#d84315"
+    ];
+
+    subgraph cluster_domain {
+        label="Dominio";
+        fontcolor="#1b5e20";
+        fontsize=13;
+        style="rounded,filled";
+        color="#c8e6c9";
+        fillcolor="#e8f5e9";
+        margin=14;
+
+        Drone [
+            label=<<B>Drone</B><BR/><FONT POINT-SIZE="9">entidad · reglas e invariantes</FONT>>,
+            fillcolor="#a5d6a7",
+            color="#2e7d32"
+        ];
+        ValueObjects [
+            shape=note,
+            label=<<B>Value Objects</B><BR/><FONT POINT-SIZE="9">FlightStatus<BR/>DroneTelemetry<BR/>DroneAction</FONT>>,
+            fillcolor="#fff59d",
+            color="#f9a825"
+        ];
+    }
+
+    AppConfig [
+        label=<<B>AppConfig / main</B><BR/><FONT POINT-SIZE="9">composition root</FONT>>,
+        fillcolor="#eceff1",
+        color="#546e7a"
+    ];
+
+    ConsoleDroneController -> IDroneControlUseCase [label=" invoca"];
+    IDroneControlUseCase -> DroneControlService [label=" es implementado por"];
+    DroneControlService -> Drone [label=" valida"];
+    DroneControlService -> IDroneApi [label=" publica"];
+    IDroneApi -> ConsoleDroneApiAdapter [label=" es implementado por"];
+    Drone -> ValueObjects [style=dashed, arrowhead=open];
+
+    AppConfig -> ConsoleDroneController [style=dashed, arrowhead=open, color="#78909c"];
+    AppConfig -> DroneControlService [style=dashed, arrowhead=open, color="#78909c"];
+    AppConfig -> Drone [style=dashed, arrowhead=open, color="#78909c"];
+    AppConfig -> ConsoleDroneApiAdapter [style=dashed, arrowhead=open, color="#78909c"];
+
+    { rank=same; ConsoleDroneController; IDroneControlUseCase; }
+    { rank=same; DroneControlService; IDroneApi; }
+    { rank=same; Drone; ConsoleDroneApiAdapter; }
+    { rank=same; ValueObjects; AppConfig; }
+}
